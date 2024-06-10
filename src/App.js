@@ -44,7 +44,8 @@ function App() {
   const fetchDataFromMongoDB = async () => {
     try {
       const response = await axios.get(
-        "https://tuyendung-vlh.onrender.com/api/admin/users"
+        "http://171.244.39.87:30002
+/api/admin/users"
       );
       setItems(response.data);
       console.log(response.data);
@@ -142,7 +143,8 @@ function App() {
   const handleExport = async () => {
     try {
       const response = await axios.get(
-        "https://tuyendung-vlh.onrender.com/export"
+        "http://171.244.39.87:30002
+/export"
       );
       console.log(response.data);
       alert(response.data);
@@ -159,7 +161,8 @@ function App() {
     if (confirmation) {
       try {
         const response = await axios.delete(
-          "https://tuyendung-vlh.onrender.com/api/delete-all"
+          "http://171.244.39.87:30002
+/api/delete-all"
         );
         alert(response.data.message);
         fetchDataFromMongoDB(); // Fetch data lại sau khi xóa
@@ -174,7 +177,8 @@ function App() {
   const deleteData = (id) => {
     console.log(id);
     try {
-      axios.delete(`https://tuyendung-vlh.onrender.com/api/data/${id}`);
+      axios.delete(`http://171.244.39.87:30002
+/api/data/${id}`);
       // return;
       console.log("Data deleted successfully");
       setEventTriggered(true);
@@ -187,7 +191,8 @@ function App() {
   const handleSendSMS = (numberPhone) => {
     // Gửi yêu cầu gửi tin nhắn tới backend
     axios
-      .post("http://localhost:5000/api/admin/sendSMS", {
+      .post("http://171.244.39.87:30002
+/api/admin/sendSMS", {
         numberPhone,
         smsText,
       })
